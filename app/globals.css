@@ -24,3 +24,284 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@font-face {
+  font-family: "poppins";
+  src: url("../fonts/Poppins-SemiBold.ttf");
+}
+
+.container {
+  min-height: 100vh;
+  max-width: 100vw;
+  position: relative;
+}
+
+.header {
+  padding: 10px;
+  font-family: "poppins";
+  position: fixed;
+  background-color: white;
+  width: 100vw;
+
+}
+
+.maxwidthContainer {
+  max-width: 1530px;
+  margin: auto;
+}
+
+.header-nav {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 69px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-nav-list {
+  display: inline-flex;
+  gap: 30px;
+  position: relative;
+}
+
+.header-nav-list>p {
+  position: relative;
+  cursor: pointer;
+  color: #555555;
+}
+
+.header-nav-list>p::before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #7D2AE8;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+  color: #7D2AE8;
+}
+
+.header-nav-list>p:hover::before {
+  transform: scaleX(1);
+  /* Aparece hacia la derecha */
+  transform-origin: right;
+}
+
+.header-nav-list>p:hover {
+  color: #7D2AE8;
+}
+
+.main-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 103px 58px;
+}
+
+.nombreColor1 {
+  color: #7D2AE8;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.nombreColor2 {
+  color: #555555;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.nombre {
+  color: #555555;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.nombreColor {
+  color: #7D2AE8;
+  font-size: 40px;
+  font-family: "poppins";
+}
+
+.container-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-text .flex>h1 {
+  font-family: "poppins";
+  font-size: 38px;
+  color: #555555;
+}
+
+.container-text-welcome {
+  font-size: 20px;
+  max-width: 579px;
+  font-family: "poppins";
+  color: #555555;
+  margin: 10px 0;
+}
+
+.iconHeand {
+  font-size: 35px;
+}
+
+.container-button {
+  padding: 20px 0;
+  margin: 10px 0;
+}
+
+.imgPicture {
+  color: transparent;
+  border-radius: 10px;
+  width: 392px;
+  height: 450px;
+  object-fit: cover;
+}
+
+.container-icon-social {
+  margin-top: 38px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 30px;
+  margin: 30px 0;
+  align-self: flex-end;
+}
+
+.social-icons-icon {
+  background-color: #7D2AE8;
+  height: 40px;
+  width: 40px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons-icon-rounded {
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+}
+.column-mobile {
+  gap: 20px;
+}
+
+
+
+
+@media (min-width: 894px) and (max-width: 1106px) {
+  .header-nav {
+    padding: 10px 60px;
+  }
+}
+
+@media (max-width: 894px) {
+  .main-section {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-text {
+    margin: 30px 0;
+    padding: 0 180px;
+  }
+
+  .header {
+    padding: 0;
+  }
+
+  .header-nav {
+    flex-direction: column;
+    padding: 28px 0;
+  }
+
+  .header-name {
+    display: none;
+  }
+
+  .hide-button-portfolio {
+    display: none !important;
+  }
+
+}
+
+@media (max-width: 880px) {
+  .container-text {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .imgPicture {
+    width: 570px;
+    height: 553px;
+  }
+}
+
+@media (max-width: 592px) and (max-width: 535px) {
+  .container-text {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .container-text .flex>h1 {
+    font-size: 29px !important;
+  }
+
+  .nombreColor2,
+  .nombre {
+    color: #555;
+    font-size: 22px;
+    font-weight: 800;
+  }
+
+  .nombreColor {
+    font-size: 26px;
+  }
+
+  .container-text-welcome {
+    max-width: 369px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 535px) {
+  .container-text-welcome {
+    max-width: 440px;
+  }
+  .container-button {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .column-mobile {
+    gap: 13px;
+  }
+  .main-section { 
+    padding: 109px 30px;
+  }
+  .header-nav-list {
+    gap: 13px
+  }
+  .imgPicture {
+    height: 200px;
+    width: 200px;
+    max-width: 200px;
+    border-radius: 50%;
+  }
+  .btn-about, .btn-projects {
+    max-width: 150px;
+    height: 50px;
+  }
+   .social-icons {
+    margin: 0;
+   }
+}
