@@ -5,7 +5,6 @@ import img from "@/public/img/about.jpeg"
 const AboutMe = () => {
   return (
     <section className="flex flex-col md:flex-row items-center justify-center py-16 px-8 bg-white">
-      {/* Texto */}
       <div className="md:w-1/2 mb-8 md:mb-0 md:pr-12">
         <h2 className="text-3xl font-bold mb-4">Sobre mí</h2>
         <p className="text-gray-700 text-lg leading-relaxed">
@@ -14,11 +13,10 @@ const AboutMe = () => {
         </p>
       </div>
 
-      {/* Foto */}
       <div className="md:w-1/2 flex flex-col items-center">
         <div className="w-100 h-100 relative overflow-hidden ">
           <Image
-            src={img} // Asegúrate de tener esta foto en la carpeta /public
+            src={img}
             alt="Mi foto"
             fill
             style={{ objectFit: 'cover' }}
