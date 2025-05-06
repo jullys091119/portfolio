@@ -18,7 +18,7 @@ const Header = () => {
           </div>
           <nav className='header-nav-list' style={{ color: dark ? "white" : null }}>
             <p><Link href="/">Inicio</Link></p>
-            <p><Link href="#">Acerca</Link></p>
+            <p><Link href="/aboutme">Acerca</Link></p>
             <p><Link href='/projects'>Portfolio</Link></p>
             <p><Link href='#'>Contacto</Link></p>
             {!dark ? <DarkModeIcon onClick={() => { setIsDark(!dark) }} /> :

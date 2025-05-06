@@ -103,7 +103,7 @@ body {
 .main-section {
   display: flex;
   justify-content: space-around;
-  padding: 103px 58px;
+  padding: 103px 16px;
 }
 
 .nombreColor1 {

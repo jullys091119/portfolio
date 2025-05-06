@@ -1,7 +1,6 @@
 "use client"
 import * as motion from "motion/react-client"
-import vivala21 from '@/public/img/project-viva.png';
-import { useEffect } from "react";
+import vivala21 from '@/public/img/project-viva.png';;
 import Image from "next/image";
 
 
