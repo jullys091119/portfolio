@@ -45,6 +45,11 @@ body {
 
 }
 
+.sectionAbout {
+  display: flex;
+  max-width: 1530px;
+}
+
 .maxwidthContainer {
   max-width: 1530px;
   margin: auto;
@@ -53,7 +58,7 @@ body {
 .header-nav {
   display: flex;
   flex-direction: row;
-  padding: 10px 69px;
+  padding: 10px 122px;
   justify-content: space-between;
   align-items: center;
 }
@@ -191,12 +196,41 @@ body {
   align-items: center;
   border: 2px solid white;
 }
+
 .column-mobile {
   gap: 20px;
 }
 
+.containerAbout {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 50px;
+}
+
+.containerText {
+  width: 50%;
+  padding: 10px;
+  max-width: 600px;
+  font-family: "poppins";
+}
+
+.containerSectionTitle {
+  font-size: 30px;
+}
 
 
+@media (max-width: 906px) {
+  .containerAbout {
+    flex-direction: column-reverse;
+  }
+
+  .containerText {
+    width: 100%;
+  }
+}
 
 @media (min-width: 894px) and (max-width: 1106px) {
   .header-nav {
@@ -235,6 +269,8 @@ body {
 
 }
 
+
+
 @media (max-width: 880px) {
   .container-text {
     padding-left: 0;
@@ -245,7 +281,14 @@ body {
     width: 570px;
     height: 553px;
   }
+
+  .containerSection {
+    flex-direction: column;
+  }
 }
+
+
+
 
 @media (max-width: 592px) and (max-width: 535px) {
   .container-text {
@@ -274,34 +317,61 @@ body {
   }
 }
 
+
+
 @media (max-width: 535px) {
   .container-text-welcome {
     max-width: 440px;
   }
+
   .container-button {
     display: flex !important;
     flex-direction: column !important;
   }
+
   .column-mobile {
     gap: 13px;
   }
-  .main-section { 
+
+  .main-section {
     padding: 109px 30px;
   }
+
   .header-nav-list {
     gap: 13px
   }
+
   .imgPicture {
     height: 200px;
     width: 200px;
     max-width: 200px;
     border-radius: 50%;
   }
-  .btn-about, .btn-projects {
+
+  .btn-about,
+  .btn-projects {
     max-width: 150px;
     height: 50px;
   }
-   .social-icons {
+
+  .social-icons {
     margin: 0;
-   }
+  }
+
+  .containerAbout {
+    justify-content: flex-end;
+    padding-top: 90px;
+  }
+
+
+  .cardContainer {
+    width: 40px;
+  }
+
+  .card {
+    width: 200px !important;
+    height: 300px !important;
+  }
+
+
 }

@@ -1,19 +1,24 @@
 "use client"
 import * as motion from "motion/react-client"
+import vivala21 from '@/public/img/project-viva.png';
+import { useEffect } from "react";
+import Image from "next/image";
+
+
 
 export default function ScrollProjects() {
   return (
     <div style={container}>
-      {projects.map(({id, hueA, hueB}, i) => (
-        <Card key={id} hueA={hueA} hueB={hueB} i={i} />
+      {projects.map(({ id, hueA, hueB, image, link }, i) => (
+        <Card key={id} hueA={hueA} hueB={hueB} image={image} link={link} i={i} />
       ))}
     </div>
   )
 }
 
-function Card({ emoji, hueA, hueB, i, link }) {
-  const background = `linear-gradient(306deg, ${hue(hueA)}, ${hue(hueB)})`
 
+function Card({ image, hueA, hueB, link, i }) {
+  const background = `linear-gradient(306deg, ${hue(hueA)}, ${hue(hueB)})`
   return (
     <motion.div
       className={`card-container-${i}`}
@@ -25,7 +30,14 @@ function Card({ emoji, hueA, hueB, i, link }) {
     >
       <div style={{ ...splash, background }} />
       <motion.div style={card} variants={cardVariants} className="card">
-        {emoji}
+        <Image
+          src={image}
+          alt="Mi foto"
+          style={{ objectFit: 'cover' }}
+          className='rounded-xl'
+          width={400}
+          height={400}
+        />
       </motion.div>
     </motion.div>
   )
@@ -53,6 +65,7 @@ const container = {
   maxWidth: 500,
   paddingBottom: 100,
   width: "100%",
+  minHeight: '100vh'
 }
 
 const cardContainer = {
@@ -76,54 +89,44 @@ const splash = {
 
 const card = {
   fontSize: 164,
+  height: 390,
   width: 300,
-  height: 430,
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   borderRadius: 20,
-  background: "#f5f5f5",
+  background: "white",
   boxShadow:
     "0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075), 0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075), 0 0 16px hsl(0deg 0% 0% / 0.075)",
   transformOrigin: "10% 60%",
 }
 
-// const food = [
-//   ["🍅", 266, 0],
-//   ["🍊", 266, 0],
-//   ["🍋", 266, 0],
-//   ["🍐", 266, 0],
-//   ["🍏", 266, 0],
-//   ["🫐", 266, 0],
-//   ["🍆", 266, 0],
-//   ["🍇", 266, 0],
-// ]
+
 
 const projects = [
-    {
-      id:1,
-      image: "/images/project1.png", // Ruta de la imagen
-      title: "Proyecto 1", // Título del proyecto
-      hueA: 266,  // Color 1 (violeta)
-      hueB: 0,    // Color 2 (gris)
-      link: "https://project1.com", // Link al proyecto
-    },
-    {
-      id:2,
-      image: "/images/project2.png",
-      title: "Proyecto 2",
-      hueA: 40,   // Color 1 (amarillo)
-      hueB: 80,   // Color 2 (rojo)
-      link: "https://project2.com",
-    },
-    {
-      id:3,
-      image: "/images/project2.png",
-      title: "Proyecto 2",
-      hueA: 40,   // Color 1 (amarillo)
-      hueB: 80,   // Color 2 (rojo)
-      link: "https://project2.com",
-    },
-    // más proyectos...
-  ]
-  
+  {
+    id: 1,
+    image: vivala21, // Ruta de la imagen
+    title: "Proyecto viva la noticia", // Título del proyecto
+    hueA: 480,
+    hueB: 30,
+    link: "https://vivala21-j4ml.vercel.app/", // Link al proyecto
+  },
+  // {
+  //   id: 2,
+  //   image: "/images/project2.png",
+  //   title: "Proyecto 2",
+  //   hueA: 40,   // Color 1 (amarillo)
+  //   hueB: 80,   // Color 2 (rojo)
+  //   link: "https://project2.com",
+  // },
+  // {
+  //   id: 3,
+  //   image: "/images/project2.png",
+  //   title: "Proyecto 2",
+  //   hueA: 40,   // Color 1 (amarillo)
+  //   hueB: 80,   // Color 2 (rojo)
+  //   link: "https://project2.com",
+  // },
+  // más proyectos...
+]
